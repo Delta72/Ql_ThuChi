@@ -69,21 +69,21 @@
             // 
             this.mnuNhanVien.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuNhanVien.Name = "mnuNhanVien";
-            this.mnuNhanVien.Size = new System.Drawing.Size(173, 22);
+            this.mnuNhanVien.Size = new System.Drawing.Size(180, 22);
             this.mnuNhanVien.Text = "NHÂN VIÊN";
             // 
             // mnuDSThu
             // 
             this.mnuDSThu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDSThu.Name = "mnuDSThu";
-            this.mnuDSThu.Size = new System.Drawing.Size(173, 22);
+            this.mnuDSThu.Size = new System.Drawing.Size(180, 22);
             this.mnuDSThu.Text = "DANH SÁCH THU";
             // 
             // mnuDSChi
             // 
             this.mnuDSChi.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDSChi.Name = "mnuDSChi";
-            this.mnuDSChi.Size = new System.Drawing.Size(173, 22);
+            this.mnuDSChi.Size = new System.Drawing.Size(180, 22);
             this.mnuDSChi.Text = "DANH SÁCH CHI";
             // 
             // mnuTienIch
@@ -102,28 +102,28 @@
             // 
             this.mnuDangNhap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDangNhap.Name = "mnuDangNhap";
-            this.mnuDangNhap.Size = new System.Drawing.Size(163, 22);
+            this.mnuDangNhap.Size = new System.Drawing.Size(180, 22);
             this.mnuDangNhap.Text = "ĐĂNG NHẬP";
             // 
             // mnuDangXuat
             // 
             this.mnuDangXuat.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDangXuat.Name = "mnuDangXuat";
-            this.mnuDangXuat.Size = new System.Drawing.Size(163, 22);
+            this.mnuDangXuat.Size = new System.Drawing.Size(180, 22);
             this.mnuDangXuat.Text = "ĐĂNG XUẤT";
             // 
             // mnuDoiMatKhau
             // 
             this.mnuDoiMatKhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDoiMatKhau.Name = "mnuDoiMatKhau";
-            this.mnuDoiMatKhau.Size = new System.Drawing.Size(163, 22);
+            this.mnuDoiMatKhau.Size = new System.Drawing.Size(180, 22);
             this.mnuDoiMatKhau.Text = "ĐỔI MẬT KHẨU";
             // 
             // mnuGioiThieu
             // 
             this.mnuGioiThieu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuGioiThieu.Name = "mnuGioiThieu";
-            this.mnuGioiThieu.Size = new System.Drawing.Size(163, 22);
+            this.mnuGioiThieu.Size = new System.Drawing.Size(180, 22);
             this.mnuGioiThieu.Text = "GIỚI THIỆU";
             // 
             // mnuThoat
@@ -156,15 +156,15 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mnuDuLieu;
         private System.Windows.Forms.ToolStripMenuItem mnuNhanVien;
         private System.Windows.Forms.ToolStripMenuItem mnuDSThu;
         private System.Windows.Forms.ToolStripMenuItem mnuDSChi;
         private System.Windows.Forms.ToolStripMenuItem mnuTienIch;
         private System.Windows.Forms.ToolStripMenuItem mnuDangNhap;
-        private System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
-        private System.Windows.Forms.ToolStripMenuItem mnuDoiMatKhau;
         private System.Windows.Forms.ToolStripMenuItem mnuGioiThieu;
         private System.Windows.Forms.ToolStripMenuItem mnuThoat;
+        public System.Windows.Forms.ToolStripMenuItem mnuDuLieu;
+        public System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
+        public System.Windows.Forms.ToolStripMenuItem mnuDoiMatKhau;
     }
 }

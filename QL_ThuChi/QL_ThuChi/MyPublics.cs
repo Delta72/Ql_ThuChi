@@ -11,7 +11,7 @@ namespace QL_ThuChi
     class MyPublics
     {
         public static SqlConnection conMyConnection;
-        public static string strMaNV, strQuyenSD, strTen;
+        public static string strMaNV = "", strQuyenSD = "", strTen = "";
         public static void ConnectDatabase()
         {
             string strConn = "Server = localhost; Database = QL_ThuChi; Integrated Security = false; UID = TN207User; PWD = TN207User";

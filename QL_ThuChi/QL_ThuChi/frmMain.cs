@@ -19,6 +19,8 @@ namespace QL_ThuChi
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            frmDangNhap1 fDN = new frmDangNhap1(this);
+            fDN.ShowDialog();
         }
     }
 }

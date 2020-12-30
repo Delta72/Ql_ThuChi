@@ -29,8 +29,8 @@ namespace QL_ThuChi
         {
             btnDangNhap.Focus();
             txtMatKhau.PasswordChar = '*';
-            txtTaiKhoan.Text = "001357";
-            txtMatKhau.Text = "001357";
+            txtTaiKhoan.Text = "001358";
+            txtMatKhau.Text = "001358";
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)

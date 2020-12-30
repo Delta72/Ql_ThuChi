@@ -22,5 +22,11 @@ namespace QL_ThuChi
             frmDangNhap1 fDN = new frmDangNhap1(this);
             fDN.ShowDialog();
         }
+
+        private void mnuDSChi_Click(object sender, EventArgs e)
+        {
+            frmChi fC = new frmChi();
+            fC.Show();
+        }
     }
 }

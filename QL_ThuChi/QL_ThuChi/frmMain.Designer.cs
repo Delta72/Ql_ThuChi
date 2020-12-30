@@ -85,6 +85,7 @@
             this.mnuDSChi.Name = "mnuDSChi";
             this.mnuDSChi.Size = new System.Drawing.Size(180, 22);
             this.mnuDSChi.Text = "DANH SÁCH CHI";
+            this.mnuDSChi.Click += new System.EventHandler(this.mnuDSChi_Click);
             // 
             // mnuTienIch
             // 

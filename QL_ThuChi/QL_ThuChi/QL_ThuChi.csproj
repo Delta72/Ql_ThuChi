@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChi.Designer.cs">
+      <DependentUpon>frmChi.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDangNhap1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     <Compile Include="MyPublics.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmChi.resx">
+      <DependentUpon>frmChi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap1.resx">
       <DependentUpon>frmDangNhap1.cs</DependentUpon>
     </EmbeddedResource>

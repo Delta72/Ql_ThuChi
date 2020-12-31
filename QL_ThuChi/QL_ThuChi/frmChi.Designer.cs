@@ -45,13 +45,13 @@ namespace QL_ThuChi
             this.dtpNgayChi = new System.Windows.Forms.DateTimePicker();
             this.dgvChi = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboLyDo = new System.Windows.Forms.ComboBox();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnKhongLuu = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
-            this.cboLyDo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -174,6 +174,7 @@ namespace QL_ThuChi
             this.dtpNgayChi.Name = "dtpNgayChi";
             this.dtpNgayChi.Size = new System.Drawing.Size(454, 26);
             this.dtpNgayChi.TabIndex = 17;
+            this.dtpNgayChi.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             // 
             // dgvChi
             // 
@@ -207,6 +208,14 @@ namespace QL_ThuChi
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // cboLyDo
+            // 
+            this.cboLyDo.FormattingEnabled = true;
+            this.cboLyDo.Location = new System.Drawing.Point(203, 211);
+            this.cboLyDo.Name = "cboLyDo";
+            this.cboLyDo.Size = new System.Drawing.Size(454, 28);
+            this.cboLyDo.TabIndex = 18;
             // 
             // btnThem
             // 
@@ -242,6 +251,7 @@ namespace QL_ThuChi
             this.btnXoa.TabIndex = 22;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -253,6 +263,7 @@ namespace QL_ThuChi
             this.btnLuu.TabIndex = 23;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnKhongLuu
             // 
@@ -277,14 +288,6 @@ namespace QL_ThuChi
             this.btnDong.Text = "Đóng Form";
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
-            // cboLyDo
-            // 
-            this.cboLyDo.FormattingEnabled = true;
-            this.cboLyDo.Location = new System.Drawing.Point(203, 211);
-            this.cboLyDo.Name = "cboLyDo";
-            this.cboLyDo.Size = new System.Drawing.Size(454, 28);
-            this.cboLyDo.TabIndex = 18;
             // 
             // frmChi
             // 

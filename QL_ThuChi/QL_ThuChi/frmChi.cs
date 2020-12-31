@@ -197,14 +197,133 @@ namespace QL_ThuChi
             blnThem = false;
         }
 
+        bool KiemTra()
+        {
+            if (txtSTT.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa nhập số thứ tự", "Thông báo");
+                txtSTT.Focus();
+                return false;
+            }
+            if(cboNVChi.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bạn chưa chọn nhân viên chi", "Thông báo");
+                return false;
+            }
+            if (cboNVNhan.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bạn chưa chọn nhân viên nhận", "Thông báo");
+                return false;
+            }
+            if (txtSoTien.Text.Trim() == "")
+            {
+                MessageBox.Show("Bạn chưa nhập số tiền", "Thông báo");
+                txtSoTien.Focus();
+                return false;
+            }
+            if (!float.TryParse(txtSoTien.Text, out float f))
+            {
+                MessageBox.Show("Bạn nhập sai định dạng số", "Thông báo");
+                txtSoTien.Clear();
+                txtSoTien.Focus();
+                return false;
+            }
+            if (cboLyDo.SelectedIndex == -1)
+            {
+                MessageBox.Show("Bạn chưa chọn lý do", "Thông báo");
+                return false;
+            }
+            return true;
+        }
+
         void ThemMoi()
         {
-
+            string strSql = "INSERT INTO CHI(STTPHIEU, MANV_CHI, MANV_NHAN, SOTIEN, NGAYCHI, LYDOCHI, GHICHU) VALUES(@STTPHIEU, @MANV_CHI, @MANV_NHAN, @SOTIEN, @NGAYCHI, @LYDOCHI, @GHICHU)";
+            if (MyPublics.conMyConnection.State == ConnectionState.Closed)
+                MyPublics.conMyConnection.Open();
+            SqlCommand cmdCommad = new SqlCommand(strSql, MyPublics.conMyConnection);
+            cmdCommad.Parameters.AddWithValue("@STTPHIEU", txtSTT.Text);
+            cmdCommad.Parameters.AddWithValue("@MANV_CHI", cboNVChi.SelectedValue.ToString());
+            cmdCommad.Parameters.AddWithValue("@MANV_NHAN", cboNVNhan.SelectedValue.ToString());
+            cmdCommad.Parameters.AddWithValue("@SOTIEN", txtSoTien.Text);
+            cmdCommad.Parameters.AddWithValue("@NGAYCHI", dtpNgayChi.Value);
+            cmdCommad.Parameters.AddWithValue("@LYDOCHI", cboLyDo.SelectedValue.ToString());
+            if (txtGhiChu.Text.Trim() == "")
+                cmdCommad.Parameters.AddWithValue("@GHICHU", DBNull.Value);
+            else
+                cmdCommad.Parameters.AddWithValue("@GHICHU", txtGhiChu.Text);
+            cmdCommad.ExecuteNonQuery();
+            MyPublics.conMyConnection.Close();
+            dsDatabase.Tables["Chi"].Rows.Add(txtSTT.Text, cboNVChi.Text, cboNVNhan.Text, txtSoTien.Text, dtpNgayChi.Value.ToString(), cboLyDo.Text, txtGhiChu.Text);
         }
 
         void ChinhSua()
         {
+            string strSql = "UPDATE CHI SET STTPHIEU=@STTPHIEU, MANV_CHI=@MANV_CHI, MANV_NHAN=@MANV_NHAN, SOTIEN=@SOTIEN, NGAYCHI=@NGAYCHI, LYDOCHI=@LYDOCHI, GHICHU=@GHICHU WHERE STTPHIEU=@STTPHIEU";
+            if (MyPublics.conMyConnection.State == ConnectionState.Closed)
+                MyPublics.conMyConnection.Open();
+            SqlCommand cmdCommad = new SqlCommand(strSql, MyPublics.conMyConnection);
+            cmdCommad.Parameters.AddWithValue("@STTPHIEU", txtSTT.Text);
+            cmdCommad.Parameters.AddWithValue("@MANV_CHI", cboNVChi.SelectedValue.ToString());
+            cmdCommad.Parameters.AddWithValue("@MANV_NHAN", cboNVNhan.SelectedValue.ToString());
+            cmdCommad.Parameters.AddWithValue("@SOTIEN", txtSoTien.Text);
+            cmdCommad.Parameters.AddWithValue("@NGAYCHI", dtpNgayChi.Value);
+            cmdCommad.Parameters.AddWithValue("@LYDOCHI", cboLyDo.SelectedValue.ToString());
+            if (txtGhiChu.Text.Trim() == "")
+                cmdCommad.Parameters.AddWithValue("@GHICHU", DBNull.Value);
+            else
+                cmdCommad.Parameters.AddWithValue("@GHICHU", txtGhiChu.Text);
+            cmdCommad.ExecuteNonQuery();
+            MyPublics.conMyConnection.Close();
+            int r = dgvChi.CurrentRow.Index;
+            dsDatabase.Tables["Chi"].Rows[r][1] = cboNVChi.Text;
+            dsDatabase.Tables["Chi"].Rows[r][2] = cboNVNhan.Text;
+            dsDatabase.Tables["Chi"].Rows[r][3] = txtSoTien.Text;
+            dsDatabase.Tables["Chi"].Rows[r][4] = dtpNgayChi.Value.ToString();
+            dsDatabase.Tables["Chi"].Rows[r][5] = cboLyDo.Text;
+            dsDatabase.Tables["Chi"].Rows[r][6] = txtGhiChu.Text;
+        }
 
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (KiemTra())
+            {
+                if (blnThem)
+                {
+                    if (MyPublics.TonTaiKhoaChinh(txtSTT.Text, "STTPHIEU", "CHI"))
+                    {
+                        MessageBox.Show("Mã " + txtSTT.Text + " đã tồn tại", "Thông báo");
+                    }
+                    else
+                    {
+                        ThemMoi();
+                        blnThem = false;
+                    }
+                }
+                else
+                    ChinhSua();
+                dkkbt();
+                GanDuLieu();
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            DialogResult blnDongY;
+            blnDongY = MessageBox.Show("Bạn có chắc muốn xóa phiếu chi mã " + txtSTT.Text, "Thông báo", MessageBoxButtons.YesNo);
+            if (blnDongY == DialogResult.Yes)
+            {
+                string strSql = "DELETE Chi WHERE STTPHIEU=@STTPHIEU";
+                if (MyPublics.conMyConnection.State == ConnectionState.Closed)
+                    MyPublics.conMyConnection.Open();
+                SqlCommand cmdCommand = new SqlCommand(strSql, MyPublics.conMyConnection);
+                cmdCommand.Parameters.AddWithValue("@STTPHIEU", txtSTT.Text);
+                cmdCommand.ExecuteNonQuery();
+                MyPublics.conMyConnection.Close();
+                MessageBox.Show("Đã xóa thành công", "Thông báo");
+                dsDatabase.Tables["Chi"].Rows.RemoveAt(dgvChi.CurrentRow.Index);
+                GanDuLieu();
+            }
         }
     }
 }

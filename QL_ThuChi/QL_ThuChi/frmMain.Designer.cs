@@ -69,21 +69,22 @@
             // 
             this.mnuNhanVien.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuNhanVien.Name = "mnuNhanVien";
-            this.mnuNhanVien.Size = new System.Drawing.Size(180, 22);
+            this.mnuNhanVien.Size = new System.Drawing.Size(173, 22);
             this.mnuNhanVien.Text = "NHÂN VIÊN";
             // 
             // mnuDSThu
             // 
             this.mnuDSThu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDSThu.Name = "mnuDSThu";
-            this.mnuDSThu.Size = new System.Drawing.Size(180, 22);
+            this.mnuDSThu.Size = new System.Drawing.Size(173, 22);
             this.mnuDSThu.Text = "DANH SÁCH THU";
+            this.mnuDSThu.Click += new System.EventHandler(this.mnuDSThu_Click);
             // 
             // mnuDSChi
             // 
             this.mnuDSChi.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDSChi.Name = "mnuDSChi";
-            this.mnuDSChi.Size = new System.Drawing.Size(180, 22);
+            this.mnuDSChi.Size = new System.Drawing.Size(173, 22);
             this.mnuDSChi.Text = "DANH SÁCH CHI";
             this.mnuDSChi.Click += new System.EventHandler(this.mnuDSChi_Click);
             // 
@@ -103,28 +104,29 @@
             // 
             this.mnuDangNhap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDangNhap.Name = "mnuDangNhap";
-            this.mnuDangNhap.Size = new System.Drawing.Size(180, 22);
+            this.mnuDangNhap.Size = new System.Drawing.Size(163, 22);
             this.mnuDangNhap.Text = "ĐĂNG NHẬP";
+            this.mnuDangNhap.Click += new System.EventHandler(this.mnuDangNhap_Click);
             // 
             // mnuDangXuat
             // 
             this.mnuDangXuat.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDangXuat.Name = "mnuDangXuat";
-            this.mnuDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.mnuDangXuat.Size = new System.Drawing.Size(163, 22);
             this.mnuDangXuat.Text = "ĐĂNG XUẤT";
             // 
             // mnuDoiMatKhau
             // 
             this.mnuDoiMatKhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDoiMatKhau.Name = "mnuDoiMatKhau";
-            this.mnuDoiMatKhau.Size = new System.Drawing.Size(180, 22);
+            this.mnuDoiMatKhau.Size = new System.Drawing.Size(163, 22);
             this.mnuDoiMatKhau.Text = "ĐỔI MẬT KHẨU";
             // 
             // mnuGioiThieu
             // 
             this.mnuGioiThieu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuGioiThieu.Name = "mnuGioiThieu";
-            this.mnuGioiThieu.Size = new System.Drawing.Size(180, 22);
+            this.mnuGioiThieu.Size = new System.Drawing.Size(163, 22);
             this.mnuGioiThieu.Text = "GIỚI THIỆU";
             // 
             // mnuThoat
@@ -133,6 +135,7 @@
             this.mnuThoat.Name = "mnuThoat";
             this.mnuThoat.Size = new System.Drawing.Size(63, 20);
             this.mnuThoat.Text = "THOÁT";
+            this.mnuThoat.Click += new System.EventHandler(this.mnuThoat_Click);
             // 
             // frmMain
             // 

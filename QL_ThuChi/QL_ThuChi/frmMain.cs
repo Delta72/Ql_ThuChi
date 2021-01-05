@@ -28,5 +28,22 @@ namespace QL_ThuChi
             frmChi fC = new frmChi();
             fC.Show();
         }
+
+        private void mnuThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void mnuDangNhap_Click(object sender, EventArgs e)
+        {
+            frmDangNhap1 frmdn1 = new frmDangNhap1();
+            frmdn1.ShowDialog();
+        }
+
+        private void mnuDSThu_Click(object sender, EventArgs e)
+        {
+            frmThu frmt = new frmThu();
+            frmt.ShowDialog();
+        }
     }
 }

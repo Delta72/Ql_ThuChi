@@ -58,7 +58,7 @@ namespace QL_ThuChi
             btnKhongLuu.Enabled = false;
             btnDong.Enabled = true;
             txtSTT.ReadOnly = true;
-            cboNVChi.Enabled = false;
+            cboNVTChi.Enabled = false;
             cboNVNhan.Enabled = false;
             txtSoTien.ReadOnly = true;
             dtpNgayChi.Enabled = false;
@@ -75,7 +75,7 @@ namespace QL_ThuChi
             btnLuu.Enabled = true;
             btnKhongLuu.Enabled = true;
             btnDong.Enabled = false;
-            cboNVChi.Enabled = true;
+            cboNVTChi.Enabled = true;
             cboNVNhan.Enabled = true;
             txtSoTien.ReadOnly = false;
             dtpNgayChi.Enabled = true;
@@ -83,7 +83,7 @@ namespace QL_ThuChi
             txtGhiChu.ReadOnly = false;
             dgvChi.Enabled = false;
             txtSTT.Text = "C" + laySTT();
-            cboNVChi.SelectedIndex = -1;
+            cboNVTChi.SelectedIndex = -1;
             cboNVNhan.SelectedIndex = -1;
             txtSoTien.Clear();
             dtpNgayChi.Value = DateTime.Now;
@@ -99,7 +99,7 @@ namespace QL_ThuChi
             btnLuu.Enabled = true;
             btnKhongLuu.Enabled = true;
             btnDong.Enabled = false;
-            cboNVChi.Enabled = true;
+            cboNVTChi.Enabled = true;
             cboNVNhan.Enabled = true;
             txtSoTien.ReadOnly = false;
             dtpNgayChi.Enabled = true;
@@ -114,8 +114,8 @@ namespace QL_ThuChi
             {
                 int r = dgvChi.CurrentRow.Index;
                 txtSTT.Text = dgvChi[0, r].Value.ToString();
-                cboNVChi.SelectedIndex = cboNVChi.FindStringExact(dgvChi[1, r].Value.ToString());
-                cboNVNhan.SelectedIndex = cboNVChi.FindStringExact(dgvChi[2, r].Value.ToString());
+                cboNVTChi.SelectedIndex = cboNVTChi.FindStringExact(dgvChi[1, r].Value.ToString());
+                cboNVNhan.SelectedIndex = cboNVTChi.FindStringExact(dgvChi[2, r].Value.ToString());
                 txtSoTien.Text = dgvChi[3, r].Value.ToString();
                 dtpNgayChi.Value = DateTime.Parse(dgvChi[4, r].Value.ToString());
                 cboLyDo.SelectedIndex = cboLyDo.FindStringExact(dgvChi[5, r].Value.ToString());
@@ -124,7 +124,7 @@ namespace QL_ThuChi
             else
             {
                 txtSTT.Clear();
-                cboNVChi.SelectedIndex = -1;
+                cboNVTChi.SelectedIndex = -1;
                 cboNVNhan.SelectedIndex = -1;
                 txtSoTien.Clear();
                 dtpNgayChi.Value = DateTime.Now;
@@ -142,9 +142,9 @@ namespace QL_ThuChi
             MyPublics.OpenData(strSql, dsDatabase, "NhanVienNhan");
             strSql = "SELECT MALYDO, MALYDO + ' - ' + DIENGIAI AS LYDO FROM LYDOTHUCHI";
             MyPublics.OpenData(strSql, dsDatabase, "LyDo");
-            cboNVChi.DataSource = dsDatabase.Tables["NhanVienChi"];
-            cboNVChi.DisplayMember = "HOTEN";
-            cboNVChi.ValueMember = "MANV";
+            cboNVTChi.DataSource = dsDatabase.Tables["NhanVienChi"];
+            cboNVTChi.DisplayMember = "HOTEN";
+            cboNVTChi.ValueMember = "MANV";
             cboNVNhan.DataSource = dsDatabase.Tables["NhanVienNhan"];
             cboNVNhan.DisplayMember = "HOTEN";
             cboNVNhan.ValueMember = "MANV";
@@ -205,7 +205,7 @@ namespace QL_ThuChi
                 txtSTT.Focus();
                 return false;
             }
-            if(cboNVChi.SelectedIndex == -1)
+            if(cboNVTChi.SelectedIndex == -1)
             {
                 MessageBox.Show("Bạn chưa chọn nhân viên chi", "Thông báo");
                 return false;
@@ -221,7 +221,8 @@ namespace QL_ThuChi
                 txtSoTien.Focus();
                 return false;
             }
-            if (!float.TryParse(txtSoTien.Text, out float f))
+            float f;
+            if (!float.TryParse(txtSoTien.Text, out f))
             {
                 MessageBox.Show("Bạn nhập sai định dạng số", "Thông báo");
                 txtSoTien.Clear();
@@ -243,7 +244,7 @@ namespace QL_ThuChi
                 MyPublics.conMyConnection.Open();
             SqlCommand cmdCommad = new SqlCommand(strSql, MyPublics.conMyConnection);
             cmdCommad.Parameters.AddWithValue("@STTPHIEU", txtSTT.Text);
-            cmdCommad.Parameters.AddWithValue("@MANV_CHI", cboNVChi.SelectedValue.ToString());
+            cmdCommad.Parameters.AddWithValue("@MANV_CHI", cboNVTChi.SelectedValue.ToString());
             cmdCommad.Parameters.AddWithValue("@MANV_NHAN", cboNVNhan.SelectedValue.ToString());
             cmdCommad.Parameters.AddWithValue("@SOTIEN", txtSoTien.Text);
             cmdCommad.Parameters.AddWithValue("@NGAYCHI", dtpNgayChi.Value);
@@ -254,7 +255,7 @@ namespace QL_ThuChi
                 cmdCommad.Parameters.AddWithValue("@GHICHU", txtGhiChu.Text);
             cmdCommad.ExecuteNonQuery();
             MyPublics.conMyConnection.Close();
-            dsDatabase.Tables["Chi"].Rows.Add(txtSTT.Text, cboNVChi.Text, cboNVNhan.Text, txtSoTien.Text, dtpNgayChi.Value.ToString(), cboLyDo.Text, txtGhiChu.Text);
+            dsDatabase.Tables["Chi"].Rows.Add(txtSTT.Text, cboNVTChi.Text, cboNVNhan.Text, txtSoTien.Text, dtpNgayChi.Value.ToString(), cboLyDo.Text, txtGhiChu.Text);
         }
 
         void ChinhSua()
@@ -264,7 +265,7 @@ namespace QL_ThuChi
                 MyPublics.conMyConnection.Open();
             SqlCommand cmdCommad = new SqlCommand(strSql, MyPublics.conMyConnection);
             cmdCommad.Parameters.AddWithValue("@STTPHIEU", txtSTT.Text);
-            cmdCommad.Parameters.AddWithValue("@MANV_CHI", cboNVChi.SelectedValue.ToString());
+            cmdCommad.Parameters.AddWithValue("@MANV_CHI", cboNVTChi.SelectedValue.ToString());
             cmdCommad.Parameters.AddWithValue("@MANV_NHAN", cboNVNhan.SelectedValue.ToString());
             cmdCommad.Parameters.AddWithValue("@SOTIEN", txtSoTien.Text);
             cmdCommad.Parameters.AddWithValue("@NGAYCHI", dtpNgayChi.Value);
@@ -276,7 +277,7 @@ namespace QL_ThuChi
             cmdCommad.ExecuteNonQuery();
             MyPublics.conMyConnection.Close();
             int r = dgvChi.CurrentRow.Index;
-            dsDatabase.Tables["Chi"].Rows[r][1] = cboNVChi.Text;
+            dsDatabase.Tables["Chi"].Rows[r][1] = cboNVTChi.Text;
             dsDatabase.Tables["Chi"].Rows[r][2] = cboNVNhan.Text;
             dsDatabase.Tables["Chi"].Rows[r][3] = txtSoTien.Text;
             dsDatabase.Tables["Chi"].Rows[r][4] = dtpNgayChi.Value.ToString();

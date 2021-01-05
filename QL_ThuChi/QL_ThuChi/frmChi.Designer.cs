@@ -40,7 +40,7 @@ namespace QL_ThuChi
             this.label7 = new System.Windows.Forms.Label();
             this.txtGhiChu = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cboNVChi = new System.Windows.Forms.ComboBox();
+            this.cboNVTChi = new System.Windows.Forms.ComboBox();
             this.cboNVNhan = new System.Windows.Forms.ComboBox();
             this.dtpNgayChi = new System.Windows.Forms.DateTimePicker();
             this.dgvChi = new System.Windows.Forms.DataGridView();
@@ -150,13 +150,13 @@ namespace QL_ThuChi
             this.label8.TabIndex = 13;
             this.label8.Text = "Ghi chú:";
             // 
-            // cboNVChi
+            // cboNVTChi
             // 
-            this.cboNVChi.FormattingEnabled = true;
-            this.cboNVChi.Location = new System.Drawing.Point(203, 72);
-            this.cboNVChi.Name = "cboNVChi";
-            this.cboNVChi.Size = new System.Drawing.Size(454, 28);
-            this.cboNVChi.TabIndex = 15;
+            this.cboNVTChi.FormattingEnabled = true;
+            this.cboNVTChi.Location = new System.Drawing.Point(203, 72);
+            this.cboNVTChi.Name = "cboNVTChi";
+            this.cboNVTChi.Size = new System.Drawing.Size(454, 28);
+            this.cboNVTChi.TabIndex = 15;
             // 
             // cboNVNhan
             // 
@@ -195,7 +195,7 @@ namespace QL_ThuChi
             this.groupBox1.Controls.Add(this.txtSTT);
             this.groupBox1.Controls.Add(this.cboNVNhan);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.cboNVChi);
+            this.groupBox1.Controls.Add(this.cboNVTChi);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label8);
@@ -293,7 +293,7 @@ namespace QL_ThuChi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1395, 710);
+            this.ClientSize = new System.Drawing.Size(1364, 710);
             this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnKhongLuu);
             this.Controls.Add(this.btnLuu);
@@ -330,7 +330,7 @@ namespace QL_ThuChi
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cboNVChi;
+        private System.Windows.Forms.ComboBox cboNVTChi;
         private System.Windows.Forms.ComboBox cboNVNhan;
         private System.Windows.Forms.DateTimePicker dtpNgayChi;
         private System.Windows.Forms.DataGridView dgvChi;

@@ -39,6 +39,7 @@
             this.mnuDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGioiThieu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.lYDOTHUCHIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,8 @@
             this.mnuDuLieu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNhanVien,
             this.mnuDSThu,
-            this.mnuDSChi});
+            this.mnuDSChi,
+            this.lYDOTHUCHIToolStripMenuItem});
             this.mnuDuLieu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDuLieu.Name = "mnuDuLieu";
             this.mnuDuLieu.Size = new System.Drawing.Size(68, 20);
@@ -103,28 +105,28 @@
             // 
             this.mnuDangNhap.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDangNhap.Name = "mnuDangNhap";
-            this.mnuDangNhap.Size = new System.Drawing.Size(180, 22);
+            this.mnuDangNhap.Size = new System.Drawing.Size(163, 22);
             this.mnuDangNhap.Text = "ĐĂNG NHẬP";
             // 
             // mnuDangXuat
             // 
             this.mnuDangXuat.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDangXuat.Name = "mnuDangXuat";
-            this.mnuDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.mnuDangXuat.Size = new System.Drawing.Size(163, 22);
             this.mnuDangXuat.Text = "ĐĂNG XUẤT";
             // 
             // mnuDoiMatKhau
             // 
             this.mnuDoiMatKhau.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDoiMatKhau.Name = "mnuDoiMatKhau";
-            this.mnuDoiMatKhau.Size = new System.Drawing.Size(180, 22);
+            this.mnuDoiMatKhau.Size = new System.Drawing.Size(163, 22);
             this.mnuDoiMatKhau.Text = "ĐỔI MẬT KHẨU";
             // 
             // mnuGioiThieu
             // 
             this.mnuGioiThieu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuGioiThieu.Name = "mnuGioiThieu";
-            this.mnuGioiThieu.Size = new System.Drawing.Size(180, 22);
+            this.mnuGioiThieu.Size = new System.Drawing.Size(163, 22);
             this.mnuGioiThieu.Text = "GIỚI THIỆU";
             // 
             // mnuThoat
@@ -133,6 +135,14 @@
             this.mnuThoat.Name = "mnuThoat";
             this.mnuThoat.Size = new System.Drawing.Size(63, 20);
             this.mnuThoat.Text = "THOÁT";
+            // 
+            // lYDOTHUCHIToolStripMenuItem
+            // 
+            this.lYDOTHUCHIToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lYDOTHUCHIToolStripMenuItem.Name = "lYDOTHUCHIToolStripMenuItem";
+            this.lYDOTHUCHIToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lYDOTHUCHIToolStripMenuItem.Text = "LY DO THU CHI";
+            this.lYDOTHUCHIToolStripMenuItem.Click += new System.EventHandler(this.lYDOTHUCHIToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -167,5 +177,6 @@
         public System.Windows.Forms.ToolStripMenuItem mnuDuLieu;
         public System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
         public System.Windows.Forms.ToolStripMenuItem mnuDoiMatKhau;
+        private System.Windows.Forms.ToolStripMenuItem lYDOTHUCHIToolStripMenuItem;
     }
 }

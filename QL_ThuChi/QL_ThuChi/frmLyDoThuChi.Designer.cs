@@ -93,6 +93,7 @@ namespace QL_ThuChi
             this.dgvLyDoThuChi.Name = "dgvLyDoThuChi";
             this.dgvLyDoThuChi.Size = new System.Drawing.Size(1046, 279);
             this.dgvLyDoThuChi.TabIndex = 5;
+            this.dgvLyDoThuChi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLyDoThuChi_CellClick);
             // 
             // btnThem
             // 
@@ -103,6 +104,7 @@ namespace QL_ThuChi
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnSua
             // 
@@ -113,6 +115,7 @@ namespace QL_ThuChi
             this.btnSua.TabIndex = 7;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
@@ -123,6 +126,7 @@ namespace QL_ThuChi
             this.btnXoa.TabIndex = 8;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnLuu
             // 
@@ -133,6 +137,7 @@ namespace QL_ThuChi
             this.btnLuu.TabIndex = 9;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnKhongLuu
             // 
@@ -143,6 +148,7 @@ namespace QL_ThuChi
             this.btnKhongLuu.TabIndex = 10;
             this.btnKhongLuu.Text = "Không lưu";
             this.btnKhongLuu.UseVisualStyleBackColor = true;
+            this.btnKhongLuu.Click += new System.EventHandler(this.btnKhongLuu_Click);
             // 
             // btnDong
             // 
@@ -153,6 +159,7 @@ namespace QL_ThuChi
             this.btnDong.TabIndex = 11;
             this.btnDong.Text = "Đóng form";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // frmLyDoThuChi
             // 

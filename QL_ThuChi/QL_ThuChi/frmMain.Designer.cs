@@ -39,6 +39,7 @@
             this.mnuDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGioiThieu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuThoat = new System.Windows.Forms.ToolStripMenuItem();
+            this.lYDOTHUCHIToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +60,8 @@
             this.mnuDuLieu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuNhanVien,
             this.mnuDSThu,
-            this.mnuDSChi});
+            this.mnuDSChi,
+            this.lYDOTHUCHIToolStripMenuItem});
             this.mnuDuLieu.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuDuLieu.Name = "mnuDuLieu";
             this.mnuDuLieu.Size = new System.Drawing.Size(68, 20);
@@ -137,6 +139,14 @@
             this.mnuThoat.Text = "THOÁT";
             this.mnuThoat.Click += new System.EventHandler(this.mnuThoat_Click);
             // 
+            // lYDOTHUCHIToolStripMenuItem
+            // 
+            this.lYDOTHUCHIToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lYDOTHUCHIToolStripMenuItem.Name = "lYDOTHUCHIToolStripMenuItem";
+            this.lYDOTHUCHIToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.lYDOTHUCHIToolStripMenuItem.Text = "LY DO THU CHI";
+            this.lYDOTHUCHIToolStripMenuItem.Click += new System.EventHandler(this.lYDOTHUCHIToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -170,5 +180,6 @@
         public System.Windows.Forms.ToolStripMenuItem mnuDuLieu;
         public System.Windows.Forms.ToolStripMenuItem mnuDangXuat;
         public System.Windows.Forms.ToolStripMenuItem mnuDoiMatKhau;
+        private System.Windows.Forms.ToolStripMenuItem lYDOTHUCHIToolStripMenuItem;
     }
 }

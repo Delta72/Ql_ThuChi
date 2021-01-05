@@ -161,6 +161,7 @@ namespace QL_ThuChi
             dgvChi.Columns[2].HeaderText = "Nhân viên nhận";
             dgvChi.Columns[3].HeaderText = "Số tiền";
             dgvChi.Columns[4].HeaderText = "Ngày chi";
+            dgvChi.Columns[4].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgvChi.Columns[5].HeaderText = "Lý do";
             dgvChi.Columns[6].HeaderText = "Ghi chú";
             dgvChi.AllowUserToAddRows = false;

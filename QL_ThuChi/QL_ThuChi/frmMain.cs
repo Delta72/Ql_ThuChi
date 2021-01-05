@@ -45,5 +45,11 @@ namespace QL_ThuChi
             frmThu frmt = new frmThu();
             frmt.ShowDialog();
         }
+
+        private void lYDOTHUCHIToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLyDoThuChi fLD = new frmLyDoThuChi();
+            fLD.Show();
+        }
     }
 }

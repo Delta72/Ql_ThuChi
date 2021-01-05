@@ -15,6 +15,7 @@ namespace QL_ThuChi
         public static void ConnectDatabase()
         {
             string strConn = "Server = DESKTOP-EHEN21F\\SQLEXPRESS; Database = QL_ThuChi; Integrated Security = false; UID = TN207User; PWD = TN207User";
+            //string strConn = "Server = localhost; Database = QL_ThuChi; Integrated Security = false; UID = TN207User; PWD = TN207User";
             conMyConnection = new SqlConnection();
             conMyConnection.ConnectionString = strConn;
             try
